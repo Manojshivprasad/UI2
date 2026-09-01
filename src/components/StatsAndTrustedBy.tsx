@@ -1,3 +1,15 @@
+import {
+  Landmark,
+  Building2,
+  ShieldCheck,
+  Banknote,
+  CreditCard,
+  PiggyBank,
+  Wallet,
+  TrendingUp,
+  Boxes,
+  type LucideIcon,
+} from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -8,7 +20,17 @@ const stats = [
   { value: 10, suffix: "+", label: "Business Process Automations" },
 ];
 
-const trustedBy = ["AwashBank", "Sama Alhayat", "National Bank", "zb Financial Holdings"];
+const trustedBy: { icon: LucideIcon; label: string }[] = [
+  { icon: Landmark, label: "[Bank One]" },
+  { icon: Building2, label: "[Bank Two]" },
+  { icon: ShieldCheck, label: "[Insurer]" },
+  { icon: Banknote, label: "[Finance Co]" },
+  { icon: CreditCard, label: "[Payments Co]" },
+  { icon: PiggyBank, label: "[Microfinance]" },
+  { icon: Wallet, label: "[Fintech]" },
+  { icon: TrendingUp, label: "[Asset Manager]" },
+  { icon: Boxes, label: "[Holdings Group]" },
+];
 
 export function StatsAndTrustedBy() {
   return (
@@ -24,18 +46,19 @@ export function StatsAndTrustedBy() {
         ))}
       </div>
 
-      <div className="border-y border-border-warm bg-surface-alt px-6 py-14 lg:px-10">
-        <ScrollReveal className="mx-auto max-w-6xl">
-          <p className="text-center text-sm font-medium tracking-wide text-muted-foreground">
-            Trusted By
+      <div className="border-y border-border-warm bg-surface-alt px-6 py-16 lg:px-10">
+        <ScrollReveal className="mx-auto max-w-5xl">
+          <p className="text-center text-sm text-muted-foreground">
+            [Placeholder] trusted in production by banking teams at
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:divide-x sm:divide-border-warm">
-            {trustedBy.map((name) => (
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-14 gap-y-10">
+            {trustedBy.map(({ icon: LogoIcon, label }) => (
               <span
-                key={name}
-                className="px-6 font-heading text-lg font-bold text-foreground/40 grayscale transition-all duration-300 first:pl-0 hover:text-accent hover:grayscale-0"
+                key={label}
+                className="flex items-center gap-2.5 text-muted-foreground/50 transition-colors duration-300 hover:text-accent"
               >
-                {name}
+                <LogoIcon className="size-6" strokeWidth={1.75} aria-hidden="true" />
+                <span className="font-heading text-lg font-semibold">{label}</span>
               </span>
             ))}
           </div>
