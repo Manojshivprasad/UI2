@@ -1,8 +1,19 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import type { ComponentType } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { products } from "@/lib/siteConfig";
-import { Icon } from "@/components/Icon";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { AuditOneVisual } from "@/components/productVisuals/AuditOneVisual";
+import { TestNovaVisual } from "@/components/productVisuals/TestNovaVisual";
+import { FinLinkVisual } from "@/components/productVisuals/FinLinkVisual";
+import { Asset360Visual } from "@/components/productVisuals/Asset360Visual";
+
+const visuals: Record<string, ComponentType> = {
+  "/products/auditone": AuditOneVisual,
+  "/products/testnova": TestNovaVisual,
+  "/products/finlink": FinLinkVisual,
+  "/products/asset360": Asset360Visual,
+};
 
 export function ProductsBento() {
   return (
@@ -16,36 +27,36 @@ export function ProductsBento() {
         </h2>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {products.map((product, i) => (
-          <ScrollReveal key={product.href} delay={i * 0.08}>
-            <Link
-              href={product.href}
-              className="group relative block h-full overflow-hidden rounded-2xl border border-border-warm bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
-            >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-10 -top-10 size-40 rounded-full bg-accent/10 blur-2xl transition-opacity duration-300 group-hover:opacity-100 opacity-0"
-              />
-              <span className="relative flex size-12 items-center justify-center rounded-xl bg-surface-alt text-accent">
-                <Icon name={product.icon} className="size-6" aria-hidden="true" />
-              </span>
-              <h3 className="relative mt-6 font-heading text-xl font-bold text-foreground">
-                {product.label}
-              </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
-                {product.blurb}
-              </p>
-              <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-                Learn more
-                <ArrowRight
-                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </span>
-            </Link>
-          </ScrollReveal>
-        ))}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {products.map((product, i) => {
+          const Visual = visuals[product.href];
+          return (
+            <ScrollReveal key={product.href} delay={i * 0.08} className="h-full">
+              <Link
+                href={product.href}
+                className="group flex h-full flex-col rounded-3xl border border-border-warm bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-xl hover:shadow-black/5 sm:p-9"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-heading text-xl font-bold text-foreground sm:text-2xl">
+                      {product.label}
+                    </h3>
+                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                      {product.blurb}
+                    </p>
+                  </div>
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-border-warm text-foreground transition-colors duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent">
+                    <ArrowUpRight className="size-4.5" aria-hidden="true" />
+                  </span>
+                </div>
+
+                <div className="mt-7 flex-1 transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-[1.015]">
+                  {Visual && <Visual />}
+                </div>
+              </Link>
+            </ScrollReveal>
+          );
+        })}
       </div>
     </section>
   );

@@ -34,25 +34,25 @@ export const products: NavChild[] = [
   {
     label: "AuditOne",
     href: "/products/auditone",
-    blurb: "Placeholder: continuous audit & compliance for core banking.",
+    blurb: "Continuous audit & compliance for core banking.",
     icon: "ShieldCheck",
   },
   {
     label: "TestNova",
     href: "/products/testnova",
-    blurb: "Placeholder: automated test orchestration for banking releases.",
+    blurb: "Automated test orchestration for banking releases.",
     icon: "FlaskConical",
   },
   {
     label: "FinLink",
     href: "/products/finlink",
-    blurb: "Placeholder: integration layer connecting core banking to fintech rails.",
+    blurb: "Integration layer connecting core banking to fintech rails.",
     icon: "Link2",
   },
   {
     label: "Asset360",
     href: "/products/asset360",
-    blurb: "Placeholder: unified view of assets across banking portfolios.",
+    blurb: "Unified view of assets across banking portfolios.",
     icon: "PieChart",
   },
 ];
