@@ -2,7 +2,7 @@
 
 import { Check, Loader2 } from "lucide-react";
 import { MockWindow } from "./MockWindow";
-import { useLoopStep } from "./useLoopStep";
+import { useLoopStep } from "@/lib/useLoopStep";
 
 const tests = [
   "auth.spec.ts",

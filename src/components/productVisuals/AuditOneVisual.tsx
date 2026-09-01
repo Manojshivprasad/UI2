@@ -3,7 +3,7 @@
 import { Check } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { MockWindow } from "./MockWindow";
-import { useLoopStep } from "./useLoopStep";
+import { useLoopStep } from "@/lib/useLoopStep";
 
 const checks = [
   "KYC records reconciled",
