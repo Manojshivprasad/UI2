@@ -6,12 +6,21 @@ import { gsap, prefersReducedMotion } from "@/lib/gsap";
 type AnimatedCounterProps = {
   target: number;
   suffix?: string;
+  decimals?: number;
   className?: string;
 };
+
+function formatValue(value: number, decimals: number) {
+  return value.toLocaleString(undefined, {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+}
 
 export function AnimatedCounter({
   target,
   suffix = "",
+  decimals = 0,
   className,
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -21,7 +30,7 @@ export function AnimatedCounter({
     if (!el) return;
 
     if (prefersReducedMotion()) {
-      el.textContent = `${target}${suffix}`;
+      el.textContent = `${formatValue(target, decimals)}${suffix}`;
       return;
     }
 
@@ -31,7 +40,7 @@ export function AnimatedCounter({
       duration: 1.6,
       ease: "power2.out",
       onUpdate: () => {
-        el.textContent = `${Math.round(counter.value)}${suffix}`;
+        el.textContent = `${formatValue(counter.value, decimals)}${suffix}`;
       },
       scrollTrigger: {
         trigger: el,
@@ -44,11 +53,12 @@ export function AnimatedCounter({
       tween.scrollTrigger?.kill();
       tween.kill();
     };
-  }, [target, suffix]);
+  }, [target, suffix, decimals]);
 
   return (
     <span ref={ref} className={className}>
-      0{suffix}
+      {formatValue(0, decimals)}
+      {suffix}
     </span>
   );
 }

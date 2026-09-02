@@ -1,12 +1,21 @@
-import { PlaceholderPage } from "@/components/PlaceholderPage";
+import { Hero } from "@/components/agenticAi/Hero";
+import { ValueSection } from "@/components/agenticAi/ValueSection";
+import { HowItWorks } from "@/components/agenticAi/HowItWorks";
+import { UseCases } from "@/components/agenticAi/UseCases";
+import { TrustGuardrails } from "@/components/agenticAi/TrustGuardrails";
+import { Metrics } from "@/components/agenticAi/Metrics";
+import { FinalCta } from "@/components/agenticAi/FinalCta";
 
 export default function AgenticAiPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Agentic AI"
-      title="Agentic AI"
-      description="Autonomous agents for banking operations — supervised, auditable, and built for regulated environments."
-      icon="Bot"
-    />
+    <>
+      <Hero />
+      <ValueSection />
+      <HowItWorks />
+      <UseCases />
+      <TrustGuardrails />
+      <Metrics />
+      <FinalCta />
+    </>
   );
 }

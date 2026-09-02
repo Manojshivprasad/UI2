@@ -4,7 +4,9 @@ import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const pillars = [
+export type TimelinePillar = { heading: string; body: string };
+
+const defaultPillars: TimelinePillar[] = [
   {
     heading: "[Placeholder] Regional Expertise",
     body: "[Placeholder] Ten years embedded in African and Indian banking, working alongside compliance, treasury, and operations teams.",
@@ -19,7 +21,13 @@ const pillars = [
   },
 ];
 
-export function DnaTimeline() {
+export function DnaTimeline({
+  heading = "Our Story",
+  pillars = defaultPillars,
+}: {
+  heading?: string;
+  pillars?: TimelinePillar[];
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
 
@@ -54,7 +62,7 @@ export function DnaTimeline() {
     <section className="mx-auto max-w-4xl px-6 py-24 lg:px-10">
       <ScrollReveal className="mb-14 text-center">
         <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          Our Story
+          {heading}
         </h2>
       </ScrollReveal>
 
