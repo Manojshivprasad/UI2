@@ -26,9 +26,9 @@ const insights = [
 
 export function InsightsPreview() {
   return (
-    <section className="bg-surface-alt py-24">
+    <section className="bg-surface-alt py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <ScrollReveal className="mb-14 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+        <ScrollReveal className="mb-10 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
               Resources

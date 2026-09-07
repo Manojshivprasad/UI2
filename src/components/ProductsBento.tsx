@@ -17,8 +17,8 @@ const visuals: Record<string, ComponentType> = {
 
 export function ProductsBento() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <ScrollReveal className="mx-auto mb-14 max-w-2xl text-center">
+    <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+      <ScrollReveal className="mx-auto mb-10 max-w-2xl text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-accent">
           Products
         </p>

@@ -23,8 +23,8 @@ const caseStudies = [
 
 export function CaseStudiesPreview() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <ScrollReveal className="mb-14 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+    <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+      <ScrollReveal className="mb-10 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">
             Case Studies

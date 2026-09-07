@@ -59,8 +59,8 @@ export function DnaTimeline({
   }, []);
 
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24 lg:px-10">
-      <ScrollReveal className="mb-14 text-center">
+    <section className="mx-auto max-w-4xl px-6 py-16 lg:px-10">
+      <ScrollReveal className="mb-10 text-center">
         <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
           {heading}
         </h2>

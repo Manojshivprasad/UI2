@@ -17,7 +17,7 @@ export function AgenticAiSpotlight() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-foreground py-24">
+    <section className="relative overflow-hidden bg-foreground py-16">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {NODE_POSITIONS.map((pos, i) => (
           <motion.span

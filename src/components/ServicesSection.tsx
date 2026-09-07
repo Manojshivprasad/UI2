@@ -56,9 +56,9 @@ const services: {
 
 export function ServicesSection() {
   return (
-    <section className="bg-surface-alt py-24 sm:py-32">
+    <section className="bg-surface-alt py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <ScrollReveal className="mx-auto mb-20 max-w-2xl text-center sm:mb-28">
+        <ScrollReveal className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">
             Services
           </p>
@@ -67,7 +67,7 @@ export function ServicesSection() {
           </h2>
         </ScrollReveal>
 
-        <div className="flex flex-col gap-20 sm:gap-28">
+        <div className="flex flex-col gap-14 sm:gap-16">
           {services.map((service, i) => {
             const isEven = i % 2 === 0;
             const Visual = service.visual;
