@@ -27,7 +27,7 @@ export function EngagementModels() {
           Engagement Models
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          [Placeholder] Work with us the way that fits you
+          Work with us the way that fits you
         </h2>
       </ScrollReveal>
 

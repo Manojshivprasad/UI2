@@ -23,8 +23,12 @@ export function ProductsBento() {
           Products
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          [Placeholder] A modular platform for modern banking
+          Purpose-built for the realities of banking
         </h2>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          Auditing, integration, asset management, and end-to-end process
+          testing — platforms built for how banks actually operate.
+        </p>
       </ScrollReveal>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">

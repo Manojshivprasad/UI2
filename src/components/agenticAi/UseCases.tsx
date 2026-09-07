@@ -8,14 +8,16 @@ import {
   ShieldCheck,
   FileSearch,
   ArrowRight,
+  BookOpen,
+  Lightbulb,
+  type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { HorizontalFlow } from "@/components/flow/HorizontalFlow";
 import { FlowFrame } from "@/components/flow/FlowFrame";
 
-function ReconciliationSnippet() {
-  const items = ["1,204 transactions matched", "3 exceptions routed to review"];
+function ListSnippet({ items, icon: ItemIcon }: { items: string[]; icon: LucideIcon }) {
   return (
     <ul className="flex w-full flex-col gap-2.5">
       {items.map((item) => (
@@ -24,7 +26,7 @@ function ReconciliationSnippet() {
           className="flex items-center gap-3 rounded-lg border border-border-warm bg-background px-3.5 py-2.5"
         >
           <span className="flex size-5 items-center justify-center rounded-full bg-accent">
-            <Check className="size-3 text-on-accent" strokeWidth={3} />
+            <ItemIcon className="size-3 text-on-accent" strokeWidth={3} />
           </span>
           <span className="text-sm text-foreground">{item}</span>
         </li>
@@ -72,43 +74,60 @@ function CustomerOpsSnippet() {
   );
 }
 
-function ComplianceSnippet() {
-  return (
-    <div className="grid w-full grid-cols-2 gap-3">
-      <div className="rounded-2xl border border-border-warm bg-background p-4">
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-          Compliance
-        </p>
-        <p className="mt-1 font-heading text-2xl font-bold text-foreground">100%</p>
-      </div>
-      <div className="rounded-2xl border border-border-warm bg-background p-4">
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-          Flags Reviewed
-        </p>
-        <p className="mt-1 font-heading text-2xl font-bold text-foreground">24/24</p>
-      </div>
-    </div>
-  );
-}
-
-function CreditOpsSnippet() {
+function AppSupportSnippet() {
   return (
     <HorizontalFlow
       nodes={[
-        { icon: FileSearch, label: "Application" },
-        { icon: ShieldCheck, label: "Risk Check" },
-        { icon: Check, label: "Decision" },
+        { icon: FileSearch, label: "Ticket Logged" },
+        { icon: ShieldCheck, label: "Triage" },
+        { icon: Check, label: "Resolved" },
       ]}
     />
   );
 }
 
 const useCases = [
-  { key: "reconciliation", label: "Reconciliation", snippet: <ReconciliationSnippet /> },
-  { key: "fraud", label: "Fraud Monitoring", snippet: <FraudSnippet /> },
-  { key: "customer-ops", label: "Customer Operations", snippet: <CustomerOpsSnippet /> },
-  { key: "compliance", label: "Compliance Monitoring", snippet: <ComplianceSnippet /> },
-  { key: "credit-ops", label: "Credit Ops", snippet: <CreditOpsSnippet /> },
+  {
+    key: "customer-service",
+    label: "Customer Service & Support",
+    snippet: <CustomerOpsSnippet />,
+  },
+  {
+    key: "back-office",
+    label: "Operations & Back-Office",
+    snippet: (
+      <ListSnippet
+        icon={Check}
+        items={["1,204 transactions matched", "3 exceptions routed to review"]}
+      />
+    ),
+  },
+  {
+    key: "knowledge-assistant",
+    label: "Knowledge Assistant for Staff",
+    snippet: (
+      <ListSnippet
+        icon={BookOpen}
+        items={["Policy question answered instantly", "SOP reference retrieved from knowledge base"]}
+      />
+    ),
+  },
+  {
+    key: "app-support",
+    label: "Core Banking & Application Support",
+    snippet: <AppSupportSnippet />,
+  },
+  {
+    key: "sales-rm",
+    label: "Sales & Relationship Management",
+    snippet: (
+      <ListSnippet
+        icon={Lightbulb}
+        items={["Customer profile summarized", "Next-best-product suggested"]}
+      />
+    ),
+  },
+  { key: "fraud", label: "Fraud & Risk Monitoring", snippet: <FraudSnippet /> },
 ];
 
 function UseCaseTabs() {
@@ -147,7 +166,7 @@ export function UseCases() {
           Use Cases
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          [Placeholder] Agents already at work across the bank
+          Agents already at work across the bank
         </h2>
       </ScrollReveal>
 

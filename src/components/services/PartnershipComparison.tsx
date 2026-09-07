@@ -1,50 +1,15 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const ours = {
-  name: "[Company Name]",
-  points: [
-    {
-      label: "Banking domain:",
-      body: "Hands-on experience with core banking operations, data migration, and integration — we understand the systems your bank runs on every day.",
-    },
-    {
-      label: "Implementation depth:",
-      body: "From configuration and customization to integration, testing, and go-live, we make the platform fit your products, processes, and regulators.",
-    },
-    {
-      label: "Local partnership:",
-      body: "On-the-ground delivery and support across our markets, through every phase of implementation and beyond.",
-    },
-  ],
-};
-
-const partner = {
-  name: "[Partner Platform]",
-  points: [
-    {
-      label: "Modern foundation:",
-      body: "A cloud-ready core banking platform built for retail and corporate banking on a single, scalable foundation.",
-    },
-    {
-      label: "Product breadth:",
-      body: "A full suite spanning deposits, lending, payments, and digital channels — so growth doesn't mean stitching together new systems.",
-    },
-    {
-      label: "Global proven platform:",
-      body: "Trusted by financial institutions worldwide, with the resilience, compliance, and roadmap of an established banking technology leader.",
-    },
-  ],
+export type PartnershipPanel = {
+  name: string;
+  points: { label: string; body: string }[];
 };
 
 function Panel({
   name,
   points,
   tone,
-}: {
-  name: string;
-  points: { label: string; body: string }[];
-  tone: "primary" | "neutral";
-}) {
+}: PartnershipPanel & { tone: "primary" | "neutral" }) {
   return (
     <div
       className={
@@ -68,7 +33,13 @@ function Panel({
   );
 }
 
-export function PartnershipComparison() {
+export function PartnershipComparison({
+  ours,
+  partner,
+}: {
+  ours: PartnershipPanel;
+  partner: PartnershipPanel;
+}) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
       <ScrollReveal className="mx-auto mb-14 max-w-2xl text-center">

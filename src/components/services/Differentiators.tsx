@@ -9,7 +9,7 @@ const pillars = [
   {
     number: "02",
     title: "Predictable Delivery",
-    blurb: "A repeatable methodology refined across 30+ implementations.",
+    blurb: "A repeatable methodology refined across 70+ project implementations.",
   },
   {
     number: "03",
@@ -31,7 +31,7 @@ export function Differentiators() {
           Differentiators
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          [Placeholder] What sets our delivery apart
+          What sets our delivery apart
         </h2>
       </ScrollReveal>
 

@@ -34,7 +34,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           Download
         </span>
         <span className="text-center text-[11px] text-muted-foreground/70">
-          [Placeholder] Not yet available
+          Coming soon
         </span>
       </div>
     </div>

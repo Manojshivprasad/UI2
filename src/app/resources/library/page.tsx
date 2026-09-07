@@ -11,11 +11,11 @@ export default function ResourceLibraryPage() {
             Resources
           </p>
           <h1 className="mx-auto mt-4 max-w-2xl font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl">
-            [Placeholder] Resource Library
+            Resource Library
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            [Placeholder] Guides, playbooks, whitepapers, and templates for
-            banking teams navigating modernization.
+            Guides, playbooks, whitepapers, and templates for banking teams
+            navigating modernization.
           </p>
         </ScrollReveal>
       </section>

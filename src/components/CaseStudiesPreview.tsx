@@ -5,19 +5,22 @@ import { Button } from "@/components/Button";
 
 const caseStudies = [
   {
-    client: "[Placeholder] Regional Bank A",
-    industry: "Retail Banking",
-    metric: "[Placeholder] 40% faster reconciliation",
+    client: "ZB Holdings, Zimbabwe",
+    industry: "Core Banking Transformation",
+    metric:
+      "Full core transformation delivered in 12 months — zero core customisations, 750,000 customers migrated.",
   },
   {
-    client: "[Placeholder] Regional Bank B",
-    industry: "Corporate Banking",
-    metric: "[Placeholder] 6-month core migration",
+    client: "National Bank of Kenya",
+    industry: "Payments",
+    metric:
+      "Outward Payments rollout via BPM platform, with strong governance and evident domain depth.",
   },
   {
-    client: "[Placeholder] Regional Bank C",
-    industry: "Microfinance",
-    metric: "[Placeholder] Zero-downtime cutover",
+    client: "Co-operative Bank of Kenya",
+    industry: "Enterprise Integration",
+    metric:
+      "Enterprise-layer APIs, Trade/Treasury integrations, and governed BI extracts.",
   },
 ];
 
@@ -30,7 +33,7 @@ export function CaseStudiesPreview() {
             Case Studies
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] Proof, not promises
+            Proof, not promises
           </h2>
         </div>
         <Button href="/case-studies" variant="ghost">

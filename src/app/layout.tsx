@@ -17,9 +17,9 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "[Company Name] — Core Banking, Reimagined",
+  title: "ThoughtsCrest — Core Banking, Automation & AI for Banks",
   description:
-    "[Placeholder] Core banking implementation, workflow automation, and data migration across African and Indian markets.",
+    "ThoughtsCrest is a global technology partner for banks and financial institutions — core banking implementation, workflow automation, data migration, and AI, backed by proprietary delivery accelerators.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

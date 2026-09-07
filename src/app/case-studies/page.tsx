@@ -11,11 +11,12 @@ export default function CaseStudiesPage() {
             Case Studies
           </p>
           <h1 className="mx-auto mt-4 max-w-2xl font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl">
-            [Placeholder] Proof, not promises
+            Proof, not promises
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            [Placeholder] Real results from core banking implementations,
-            migrations, and automations across African and Indian markets.
+            Trusted by banks and financial institutions to deliver
+            transformation that lasts. Here&apos;s what our clients say
+            about working with ThoughtsCrest.
           </p>
         </ScrollReveal>
       </section>

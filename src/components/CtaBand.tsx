@@ -18,11 +18,11 @@ export function CtaBand() {
       )}
       <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
         <h2 className="font-heading text-3xl font-bold text-on-accent sm:text-4xl">
-          [Placeholder] Ready to modernize your core banking stack?
+          Ready to modernize your core banking stack?
         </h2>
         <p className="max-w-xl text-base text-on-accent/85">
-          [Placeholder] Talk to our team about implementation, migration, or
-          automation — no obligation, just a straight conversation.
+          Talk to our team about implementation, migration, or automation —
+          no obligation, just a straight conversation.
         </p>
         <div className="mt-2 flex flex-col gap-3 sm:flex-row">
           <Button href="/contact/book-a-consultation" variant="onAccent">

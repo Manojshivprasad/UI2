@@ -8,16 +8,16 @@ export type TimelinePillar = { heading: string; body: string };
 
 const defaultPillars: TimelinePillar[] = [
   {
-    heading: "[Placeholder] Regional Expertise",
-    body: "[Placeholder] Ten years embedded in African and Indian banking, working alongside compliance, treasury, and operations teams.",
+    heading: "Founded in Core Banking",
+    body: "Founded in 2015 by a group of banking consultants, we've grown into a full-spectrum core banking implementation and digital transformation firm — as an official Finastra partner with deep Fusion Essence expertise.",
   },
   {
-    heading: "[Placeholder] Proven Delivery Model",
-    body: "[Placeholder] A repeatable implementation methodology refined across 30+ core banking rollouts.",
+    heading: "Proven Delivery, Globally",
+    body: "120+ consultants have delivered 70+ project implementations for banks and financial institutions across 13 countries and 4 continents.",
   },
   {
     heading: "Deep Banking DNA",
-    body: "A decade of core banking implementation, workflow automation, and data migration across African and Indian markets. We ship faster, with full control and audit-ready confidence.",
+    body: "A decade of core banking implementation, workflow automation, data migration, and AI — backed by proprietary accelerators like TCL Build Configurator and TestNova that cut CBS setup and testing time by over 70%.",
   },
 ];
 

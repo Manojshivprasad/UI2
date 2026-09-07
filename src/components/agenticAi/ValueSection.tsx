@@ -11,13 +11,13 @@ export function ValueSection() {
       <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <ScrollReveal direction="left">
           <h2 className="font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl">
-            [Placeholder] Work gets done. Your team stays in control.
+            Work gets done. Your team stays in control.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-            [Placeholder] Agentic AI takes on the repetitive operational work
-            across your banking stack — reconciliation, monitoring, routine
-            approvals — while every action stays logged, explainable, and
-            escalated to a human whenever it matters.
+            Agentic AI takes on the repetitive operational work across your
+            banking stack — reconciliation, monitoring, routine approvals —
+            while every action stays logged, explainable, and escalated to a
+            human whenever it matters.
           </p>
         </ScrollReveal>
 

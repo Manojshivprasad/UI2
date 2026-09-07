@@ -21,15 +21,15 @@ const stats = [
 ];
 
 const trustedBy: { icon: LucideIcon; label: string }[] = [
-  { icon: Landmark, label: "[Bank One]" },
-  { icon: Building2, label: "[Bank Two]" },
-  { icon: ShieldCheck, label: "[Insurer]" },
-  { icon: Banknote, label: "[Finance Co]" },
-  { icon: CreditCard, label: "[Payments Co]" },
-  { icon: PiggyBank, label: "[Microfinance]" },
-  { icon: Wallet, label: "[Fintech]" },
-  { icon: TrendingUp, label: "[Asset Manager]" },
-  { icon: Boxes, label: "[Holdings Group]" },
+  { icon: Landmark, label: "National Bank" },
+  { icon: Building2, label: "ZB Financial Holdings" },
+  { icon: ShieldCheck, label: "Awash Bank" },
+  { icon: Banknote, label: "Sama Alhayat" },
+  { icon: CreditCard, label: "Co-operative Bank of Kenya" },
+  { icon: PiggyBank, label: "Mediterranean Bank" },
+  { icon: Wallet, label: "Tonik Bank" },
+  { icon: TrendingUp, label: "Bangkok Bank" },
+  { icon: Boxes, label: "Belize Bank" },
 ];
 
 export function StatsAndTrustedBy() {
@@ -49,7 +49,7 @@ export function StatsAndTrustedBy() {
       <div className="border-y border-border-warm bg-surface-alt px-6 py-16 lg:px-10">
         <ScrollReveal className="mx-auto max-w-5xl">
           <p className="text-center text-sm text-muted-foreground">
-            [Placeholder] trusted in production by banking teams at
+            Trusted by banks and financial institutions across 13 countries
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-14 gap-y-10">
             {trustedBy.map(({ icon: LogoIcon, label }) => (

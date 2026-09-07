@@ -11,12 +11,12 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const tools: { icon: LucideIcon; title: string; blurb: string }[] = [
   {
     icon: Wrench,
-    title: "Build Configurator",
+    title: "TCL Build Configurator",
     blurb: "Configure builds faster with a repeatable, proven setup.",
   },
   {
     icon: BotIcon,
-    title: "Test Automate",
+    title: "TCL Test Automate",
     blurb: "Automated testing that accelerates QA without cutting corners.",
   },
   {
@@ -26,12 +26,12 @@ const tools: { icon: LucideIcon; title: string; blurb: string }[] = [
   },
   {
     icon: Gauge,
-    title: "Migration Accelerator",
+    title: "Migration Factory Accelerator",
     blurb: "De-risk and speed up data migration projects.",
   },
   {
     icon: Share2,
-    title: "Integration ESB",
+    title: "FinLink ESB",
     blurb: "Connect systems through our enterprise service bus.",
   },
 ];
@@ -42,10 +42,10 @@ export function ToolsAccelerators() {
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <ScrollReveal className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Tools &amp; Accelerators
+            Speed Up Your Process Using Our Tools
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] Proprietary tooling that shortens delivery
+            Proprietary tooling that shortens delivery
           </h2>
         </ScrollReveal>
 

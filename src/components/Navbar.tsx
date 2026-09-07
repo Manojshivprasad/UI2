@@ -44,7 +44,7 @@ export function Navbar() {
           href="/"
           className="font-heading text-lg font-bold tracking-tight text-foreground"
         >
-          [Company Name]
+          ThoughtsCrest
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">

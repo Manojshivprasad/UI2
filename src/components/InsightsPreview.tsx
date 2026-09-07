@@ -7,19 +7,19 @@ const insights = [
   {
     category: "Insights",
     icon: Lightbulb,
-    title: "[Placeholder] What a 4th-generation core actually changes",
+    title: "What a modern core actually changes",
     href: "/resources/insights",
   },
   {
     category: "Blog",
     icon: Newspaper,
-    title: "[Placeholder] Notes from a live migration cutover",
+    title: "Behind the scenes of a core banking go-live",
     href: "/resources/blog",
   },
   {
     category: "Resource Library",
     icon: BookOpen,
-    title: "[Placeholder] Playbook: buying a core banking system",
+    title: "How to buy a core banking system",
     href: "/resources/library",
   },
 ];
@@ -34,7 +34,7 @@ export function InsightsPreview() {
               Resources
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-              [Placeholder] Latest thinking
+              Latest thinking
             </h2>
           </div>
           <Button href="/resources" variant="ghost">

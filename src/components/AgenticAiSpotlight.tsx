@@ -44,12 +44,13 @@ export function AgenticAiSpotlight() {
           <Bot className="size-7" aria-hidden="true" />
         </span>
         <h2 className="font-heading text-3xl font-bold text-background sm:text-4xl">
-          [Placeholder] Agentic AI for Banking Operations
+          Move beyond chatbots
         </h2>
         <p className="max-w-xl text-base leading-relaxed text-background/70">
-          [Placeholder] Autonomous agents that reconcile, monitor, and act
-          across your core banking stack — supervised, auditable, and built
-          for regulated environments.
+          We deploy governed banking agents that execute real workflows —
+          with audit-ready logs, human-in-the-loop controls, and full data
+          sovereignty. Built on a banking-grade agent platform, delivered by
+          a team that understands banking.
         </p>
         <Button href="/agentic-ai" variant="onAccent" className="mt-2">
           Explore Agentic AI

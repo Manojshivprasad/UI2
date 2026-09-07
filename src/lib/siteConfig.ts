@@ -34,25 +34,25 @@ export const products: NavChild[] = [
   {
     label: "AuditOne",
     href: "/products/auditone",
-    blurb: "Continuous audit & compliance for core banking.",
+    blurb: "Purpose-built for auditing banking transactions and static data.",
     icon: "ShieldCheck",
   },
   {
     label: "TestNova",
     href: "/products/testnova",
-    blurb: "Automated test orchestration for banking releases.",
+    blurb: "End-to-end business process testing for banking — not just code.",
     icon: "FlaskConical",
   },
   {
     label: "FinLink",
     href: "/products/finlink",
-    blurb: "Integration layer connecting core banking to fintech rails.",
+    blurb: "The enterprise service bus connecting your banking ecosystem.",
     icon: "Link2",
   },
   {
     label: "Asset360",
     href: "/products/asset360",
-    blurb: "Unified view of assets across banking portfolios.",
+    blurb: "Manage the full lifecycle of fixed assets, acquisition to disposal.",
     icon: "PieChart",
   },
 ];
@@ -61,31 +61,31 @@ export const services: NavChild[] = [
   {
     label: "Core Banking",
     href: "/services/core-banking",
-    blurb: "Placeholder: end-to-end core banking implementation.",
+    blurb: "End-to-end Finastra Fusion Essence implementation and modernization.",
     icon: "Landmark",
   },
   {
     label: "Workflow Automation",
     href: "/services/workflow-automation",
-    blurb: "Placeholder: automating manual banking operations.",
+    blurb: "Automating manual, multi-system banking operations with Newgen.",
     icon: "Workflow",
   },
   {
     label: "Data Migration",
     href: "/services/data-migration",
-    blurb: "Placeholder: audit-ready migration between core systems.",
+    blurb: "Move data between core systems with accuracy and confidence.",
     icon: "Database",
   },
   {
     label: "Custom Software",
     href: "/services/custom-software",
-    blurb: "Placeholder: bespoke software built around your workflows.",
+    blurb: "Banking-grade custom software, secure by design, owned by you.",
     icon: "Code2",
   },
   {
     label: "AI & ML",
     href: "/services/ai-ml",
-    blurb: "Placeholder: applied AI/ML for banking operations.",
+    blurb: "Applied AI/ML for fraud, risk, document intelligence, and agents.",
     icon: "BrainCircuit",
   },
 ];
@@ -94,19 +94,19 @@ export const resources: NavChild[] = [
   {
     label: "Insights",
     href: "/resources/insights",
-    blurb: "Placeholder: analysis and perspectives from our consultants.",
+    blurb: "Analysis and perspectives from our banking consultants.",
     icon: "Lightbulb",
   },
   {
     label: "Blog",
     href: "/resources/blog",
-    blurb: "Placeholder: news and updates from the team.",
+    blurb: "News and updates from the ThoughtsCrest team.",
     icon: "Newspaper",
   },
   {
     label: "Resource Library",
     href: "/resources/library",
-    blurb: "Placeholder: guides, whitepapers, and playbooks.",
+    blurb: "Guides, whitepapers, and playbooks for banking transformation.",
     icon: "BookOpen",
   },
 ];

@@ -1,61 +1,40 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Building2, Landmark, PiggyBank, Database } from "lucide-react";
+import { Landmark, Banknote, Share2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TagFilter } from "@/components/TagFilter";
 import { CaseStudyCard } from "./CaseStudyCard";
 
-const categories = ["Retail Banking", "Corporate Banking", "Microfinance", "Data Migration"];
+const categories = ["Core Banking", "Payments", "Enterprise Integration"];
 
 const caseStudies = [
   {
-    icon: Building2,
-    client: "[Placeholder] Regional Bank A",
-    industry: "Retail Banking",
-    metric: "[Placeholder] 40% faster reconciliation",
+    icon: Landmark,
+    client: "ZB Holdings, Zimbabwe",
+    industry: "Core Banking",
+    metric:
+      "Full core transformation delivered in 12 months — zero core customisations, 750,000 customers migrated.",
   },
   {
     icon: Landmark,
-    client: "[Placeholder] Regional Bank B",
-    industry: "Corporate Banking",
-    metric: "[Placeholder] 6-month core migration",
+    client: "Mediterranean Bank",
+    industry: "Core Banking",
+    metric: "Fusion Essence modernization delivered on time and with disciplined risk control.",
   },
   {
-    icon: PiggyBank,
-    client: "[Placeholder] Regional Bank C",
-    industry: "Microfinance",
-    metric: "[Placeholder] Zero-downtime cutover",
+    icon: Banknote,
+    client: "National Bank of Kenya",
+    industry: "Payments",
+    metric:
+      "Outward Payments rollout via BPM platform, with strong governance and evident domain depth.",
   },
   {
-    icon: Database,
-    client: "[Placeholder] Regional Bank D",
-    industry: "Data Migration",
-    metric: "[Placeholder] 2M+ records migrated with zero discrepancies",
-  },
-  {
-    icon: Building2,
-    client: "[Placeholder] Regional Bank E",
-    industry: "Retail Banking",
-    metric: "[Placeholder] Digital onboarding time cut by 60%",
-  },
-  {
-    icon: Landmark,
-    client: "[Placeholder] Regional Bank F",
-    industry: "Corporate Banking",
-    metric: "[Placeholder] Unified treasury operations across 3 markets",
-  },
-  {
-    icon: PiggyBank,
-    client: "[Placeholder] Regional Bank G",
-    industry: "Microfinance",
-    metric: "[Placeholder] Loan origination automated end-to-end",
-  },
-  {
-    icon: Database,
-    client: "[Placeholder] Regional Bank H",
-    industry: "Data Migration",
-    metric: "[Placeholder] Legacy core decommissioned on schedule",
+    icon: Share2,
+    client: "Co-operative Bank of Kenya",
+    industry: "Enterprise Integration",
+    metric:
+      "Enterprise-layer APIs, Trade and Treasury integrations, and governed BI extracts.",
   },
 ];
 

@@ -14,12 +14,13 @@ export function Hero() {
           Agentic AI
         </p>
         <h1 className="mx-auto mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
-          [Placeholder] Autonomous agents for modern banking operations
+          Move beyond chatbots
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-          [Placeholder] Agents that reconcile, monitor and act across your
-          core banking stack — supervised, auditable, and built for
-          regulated environments.
+          We deploy governed banking agents that execute real workflows —
+          with audit-ready logs, human-in-the-loop controls, and full data
+          sovereignty. Built on a banking-grade agent platform, delivered by
+          a team that understands banking.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/contact/book-a-consultation">

@@ -35,19 +35,21 @@ export function HeroSection() {
       <div className="flex max-w-xl flex-col items-start gap-6 text-left">
         <span className="inline-flex items-center gap-2 rounded-full border border-border-warm bg-surface-alt px-4 py-1.5 text-xs font-semibold text-accent">
           <Sparkles className="size-3.5" aria-hidden="true" />
-          [Placeholder] Trusted across African &amp; Indian Banking Markets
+          Global technology partner for banks &amp; financial institutions
         </span>
 
         <h1
           ref={headlineRef}
           className="font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl"
         >
-          [Placeholder] Core Banking Infrastructure Without Compromise
+          Banking technology that works the way banks actually work.
         </h1>
 
         <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-          [Placeholder] Implementation, workflow automation, data migration,
-          and agentic AI — delivered by a team that ships faster with
+          ThoughtsCrest builds core banking implementations, automation, and
+          AI for financial institutions that can&rsquo;t afford to get it
+          wrong. We pair deep banking-domain expertise with proprietary
+          delivery accelerators — so you ship faster, with full control and
           audit-ready confidence.
         </p>
 

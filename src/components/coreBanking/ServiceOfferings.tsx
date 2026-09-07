@@ -51,7 +51,7 @@ export function ServiceOfferings() {
             Service Offerings
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] Every phase of the implementation lifecycle
+            Every phase of the implementation lifecycle
           </h2>
         </ScrollReveal>
 

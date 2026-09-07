@@ -2,10 +2,10 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const stats = [
-  { value: 10, suffix: "+", label: "Years in banking technology" },
-  { value: 30, suffix: "+", label: "Core banking implementations" },
-  { value: 80, suffix: "+", label: "Consultants" },
-  { value: 2, suffix: "", label: "Regions served" },
+  { value: 120, suffix: "+", label: "Consultants" },
+  { value: 70, suffix: "+", label: "Project implementations" },
+  { value: 13, suffix: "", label: "Countries served" },
+  { value: 4, suffix: "", label: "Continents" },
 ];
 
 export function Stats() {

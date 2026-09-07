@@ -34,7 +34,7 @@ export function SimpleForm({
           {title}
         </h1>
         <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-          [Placeholder] {description}
+          {description}
         </p>
       </ScrollReveal>
 
@@ -72,7 +72,7 @@ export function SimpleForm({
             {submitLabel}
           </button>
           <p className="text-center text-xs text-muted-foreground">
-            [Placeholder] Form submission is not yet connected.
+            Form submission is not yet connected.
           </p>
         </form>
       </ScrollReveal>

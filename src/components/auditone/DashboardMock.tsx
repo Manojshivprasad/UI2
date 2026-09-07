@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   LayoutGrid,
   ShieldCheck,
@@ -11,7 +12,13 @@ import {
 import { useLoopStep } from "@/lib/useLoopStep";
 import { cn } from "@/lib/cn";
 
-const navIcons = [LayoutGrid, ShieldCheck, ClipboardList, Bell, Settings];
+const navItems = [
+  { icon: LayoutGrid, label: "Overview" },
+  { icon: ShieldCheck, label: "Compliance" },
+  { icon: ClipboardList, label: "Reports" },
+  { icon: Bell, label: "Alerts" },
+  { icon: Settings, label: "Settings" },
+];
 
 const checks = [
   "KYC records reconciled",
@@ -27,13 +34,17 @@ const alerts = [
 ];
 
 export function DashboardMock({ className }: { className?: string }) {
-  const step = useLoopStep(checks.length, 900);
+  const [hovered, setHovered] = useState(false);
+  const [activeNav, setActiveNav] = useState(0);
+  const step = useLoopStep(checks.length, 900, hovered);
   const done = step >= checks.length;
 
   return (
     <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       className={cn(
-        "w-full overflow-hidden rounded-3xl border border-border-warm bg-white shadow-xl shadow-black/5",
+        "w-full overflow-hidden rounded-3xl border border-border-warm bg-white shadow-xl shadow-black/5 transition-shadow duration-300 hover:shadow-2xl",
         className
       )}
     >
@@ -42,7 +53,7 @@ export function DashboardMock({ className }: { className?: string }) {
         <span className="size-2.5 rounded-full bg-border-warm" />
         <span className="size-2.5 rounded-full bg-border-warm" />
         <span className="ml-3 text-xs font-medium text-muted-foreground">
-          AuditOne Console
+          {navItems[activeNav].label}
         </span>
         <span className="ml-auto flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">
           <span className="size-1.5 animate-pulse rounded-full bg-emerald-600" />
@@ -52,16 +63,22 @@ export function DashboardMock({ className }: { className?: string }) {
 
       <div className="flex">
         <div className="flex w-12 flex-col items-center gap-4 border-r border-border-warm bg-surface-alt/40 py-5">
-          {navIcons.map((NavIcon, i) => (
-            <span
-              key={i}
+          {navItems.map((item, i) => (
+            <button
+              key={item.label}
+              type="button"
+              onClick={() => setActiveNav(i)}
+              aria-pressed={activeNav === i}
+              aria-label={item.label}
               className={cn(
-                "flex size-8 items-center justify-center rounded-lg",
-                i === 0 ? "bg-accent text-on-accent" : "text-muted-foreground/50"
+                "flex size-8 items-center justify-center rounded-lg transition-colors duration-200",
+                activeNav === i
+                  ? "bg-accent text-on-accent"
+                  : "text-muted-foreground/50 hover:bg-accent/10 hover:text-accent"
               )}
             >
-              <NavIcon className="size-4" aria-hidden="true" />
-            </span>
+              <item.icon className="size-4" aria-hidden="true" />
+            </button>
           ))}
         </div>
 

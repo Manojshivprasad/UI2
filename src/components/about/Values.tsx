@@ -5,22 +5,22 @@ const values: { icon: LucideIcon; title: string; blurb: string }[] = [
   {
     icon: HeartHandshake,
     title: "Integrity",
-    blurb: "[Placeholder] We tell clients what they need to hear, not what's easiest to say.",
+    blurb: "We tell clients what they need to hear, not what's easiest to say.",
   },
   {
     icon: Hammer,
     title: "Craftsmanship",
-    blurb: "[Placeholder] Implementation details matter — we sweat the ones others skip.",
+    blurb: "Implementation details matter — we sweat the ones others skip.",
   },
   {
     icon: Users2,
     title: "Partnership",
-    blurb: "[Placeholder] We stay on the ground through go-live and beyond, not just the handoff.",
+    blurb: "We stay on the ground through go-live and beyond, not just the handoff.",
   },
   {
     icon: Target,
     title: "Impact",
-    blurb: "[Placeholder] Every engagement is measured against real operational outcomes.",
+    blurb: "Every engagement is measured against real operational outcomes.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function Values() {
             Values
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] What we stand for
+            What we stand for
           </h2>
         </ScrollReveal>
 

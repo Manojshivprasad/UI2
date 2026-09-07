@@ -8,41 +8,41 @@ const articles = [
     category: "Product Updates",
     tag: "Product Updates",
     icon: Rocket,
-    title: "[Placeholder] What's new in AuditOne this quarter",
-    excerpt: "[Placeholder] New checks, alerting improvements, and a refreshed console.",
-    date: "[Placeholder date]",
+    title: "Inside AuditOne: how continuous audit works",
+    excerpt: "A look at how AuditOne turns transaction and static-data review into a repeatable, trackable workflow.",
+    date: "4 min read",
   },
   {
     category: "Company News",
     tag: "Company News",
     icon: Newspaper,
-    title: "[Placeholder] Notes from a live migration cutover",
-    excerpt: "[Placeholder] Behind the scenes of a recent core banking go-live.",
-    date: "[Placeholder date]",
+    title: "Behind the scenes of a core banking go-live",
+    excerpt: "What it actually takes to get a bank from cutover planning to a stable production launch.",
+    date: "6 min read",
   },
   {
     category: "Events",
     tag: "Events",
     icon: Users,
-    title: "[Placeholder] Join us at [Placeholder Event Name]",
-    excerpt: "[Placeholder] Where to find our team at upcoming industry events.",
-    date: "[Placeholder date]",
+    title: "Where to find our team",
+    excerpt: "Industry events and banking technology forums our consultants attend across our markets.",
+    date: "3 min read",
   },
   {
     category: "Partnerships",
     tag: "Partnerships",
     icon: Handshake,
-    title: "[Placeholder] Expanding our platform partnerships",
-    excerpt: "[Placeholder] New integrations and technology partnerships in the works.",
-    date: "[Placeholder date]",
+    title: "Our platform partner ecosystem",
+    excerpt: "How our work with Finastra, Newgen, and Lyzr AI shapes what we deliver for clients.",
+    date: "5 min read",
   },
   {
     category: "Company News",
     tag: "Company News",
     icon: Newspaper,
-    title: "[Placeholder] Welcoming new consultants to the team",
-    excerpt: "[Placeholder] Growing our delivery bench across African and Indian markets.",
-    date: "[Placeholder date]",
+    title: "Growing our delivery bench",
+    excerpt: "How we structure and scale our consulting teams across the markets we serve.",
+    date: "4 min read",
   },
 ];
 
@@ -50,8 +50,8 @@ export default function BlogPage() {
   return (
     <ArticleListing
       eyebrow="Resources"
-      heading="[Placeholder] Blog"
-      subtext="[Placeholder] News, product updates, and what's happening at the company."
+      heading="Blog"
+      subtext="News, product updates, and what's happening at ThoughtsCrest."
       categories={["Product Updates", "Company News", "Events", "Partnerships"]}
       articles={articles}
     />

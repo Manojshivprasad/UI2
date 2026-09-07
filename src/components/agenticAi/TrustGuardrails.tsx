@@ -2,10 +2,10 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { GuardrailFlow } from "./GuardrailFlow";
 
 const pillars = [
-  { number: "01", title: "Human Oversight" },
-  { number: "02", title: "Full Audit Trail" },
-  { number: "03", title: "Explainable Decisions" },
-  { number: "04", title: "Configurable Guardrails" },
+  { number: "01", title: "Audit-Ready Logs" },
+  { number: "02", title: "Human In The Loop" },
+  { number: "03", title: "Data Sovereignty" },
+  { number: "04", title: "Regulatory Compliance" },
 ];
 
 export function TrustGuardrails() {
@@ -17,7 +17,7 @@ export function TrustGuardrails() {
             Trust &amp; Guardrails
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] Built for a regulated industry, not around it
+            Built for a regulated industry, not around it
           </h2>
         </ScrollReveal>
 

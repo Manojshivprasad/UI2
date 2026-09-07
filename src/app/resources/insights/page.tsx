@@ -8,49 +8,49 @@ const articles = [
     category: "Core Banking",
     tag: "Core Banking",
     icon: Lightbulb,
-    title: "[Placeholder] What a 4th-generation core actually changes",
-    excerpt: "[Placeholder] A look at what separates modern core platforms from legacy systems in practice.",
-    date: "[Placeholder date]",
+    title: "What a modern core actually changes",
+    excerpt: "A look at what separates cloud-native, API-first core platforms from legacy systems in practice.",
+    date: "5 min read",
   },
   {
     category: "Compliance",
     tag: "Compliance",
     icon: ShieldCheck,
-    title: "[Placeholder] Staying audit-ready during a core migration",
-    excerpt: "[Placeholder] How to keep regulators satisfied while your systems are mid-transition.",
-    date: "[Placeholder date]",
+    title: "Staying audit-ready during a core migration",
+    excerpt: "How to keep regulators satisfied while your systems are mid-transition.",
+    date: "6 min read",
   },
   {
     category: "Data Migration",
     tag: "Data Migration",
     icon: Database,
-    title: "[Placeholder] Reconciliation strategies that actually scale",
-    excerpt: "[Placeholder] Lessons from large-scale data migrations across multiple markets.",
-    date: "[Placeholder date]",
+    title: "Reconciliation strategies that actually scale",
+    excerpt: "Lessons from large-scale core banking data migrations across multiple markets.",
+    date: "7 min read",
   },
   {
     category: "AI & Automation",
     tag: "AI & Automation",
     icon: BrainCircuit,
-    title: "[Placeholder] Where agentic AI fits in banking operations today",
-    excerpt: "[Placeholder] A practical view of what autonomous agents can and can't do yet.",
-    date: "[Placeholder date]",
+    title: "Where agentic AI fits in banking operations today",
+    excerpt: "A practical view of what governed, human-in-the-loop agents can and can't do yet.",
+    date: "5 min read",
   },
   {
     category: "Core Banking",
     tag: "Core Banking",
     icon: Lightbulb,
-    title: "[Placeholder] Buy vs. build: choosing a core banking vendor",
-    excerpt: "[Placeholder] A framework for evaluating platform partners against your roadmap.",
-    date: "[Placeholder date]",
+    title: "Buy vs. build: choosing a core banking vendor",
+    excerpt: "A framework for evaluating platform partners against your roadmap.",
+    date: "8 min read",
   },
   {
     category: "Compliance",
     tag: "Compliance",
     icon: ShieldCheck,
-    title: "[Placeholder] The real cost of manual compliance reviews",
-    excerpt: "[Placeholder] Why manual review processes quietly become the bottleneck.",
-    date: "[Placeholder date]",
+    title: "The real cost of manual compliance reviews",
+    excerpt: "Why manual review processes quietly become the bottleneck.",
+    date: "4 min read",
   },
 ];
 
@@ -58,8 +58,8 @@ export default function InsightsPage() {
   return (
     <ArticleListing
       eyebrow="Resources"
-      heading="[Placeholder] Insights"
-      subtext="[Placeholder] Analysis and perspectives from our consultants on core banking, compliance, and modernization."
+      heading="Insights"
+      subtext="Analysis and perspectives from our consultants on core banking, compliance, and modernization."
       categories={["Core Banking", "Compliance", "Data Migration", "AI & Automation"]}
       articles={articles}
     />

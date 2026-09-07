@@ -1,27 +1,11 @@
-import {
-  MonitorSmartphone,
-  Share2,
-  Server,
-  Database,
-  BrainCircuit,
-} from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { VerticalFlow } from "@/components/flow/VerticalFlow";
-import { FlowFrame } from "@/components/flow/FlowFrame";
+import { ApiSnippetMock } from "./ApiSnippetMock";
 
 const differentiators = [
   { number: "01", title: "API-first architecture" },
   { number: "02", title: "Real-time processing" },
   { number: "03", title: "Enterprise-grade security" },
   { number: "04", title: "Scalable infrastructure" },
-];
-
-const architectureNodes = [
-  { icon: MonitorSmartphone, label: "Applications" },
-  { icon: Share2, label: "API Gateway" },
-  { icon: Server, label: "Core Platform" },
-  { icon: Database, label: "Data Layer" },
-  { icon: BrainCircuit, label: "Analytics / AI", filled: true },
 ];
 
 export function Technical() {
@@ -53,10 +37,8 @@ export function Technical() {
             </ul>
           </ScrollReveal>
 
-          <ScrollReveal direction="right">
-            <FlowFrame>
-              <VerticalFlow nodes={architectureNodes} />
-            </FlowFrame>
+          <ScrollReveal direction="right" className="flex justify-center">
+            <ApiSnippetMock />
           </ScrollReveal>
         </div>
       </div>

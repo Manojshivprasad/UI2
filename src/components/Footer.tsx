@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail, MapPin } from "lucide-react";
 import { footerColumns } from "@/lib/siteConfig";
 
 export function Footer() {
@@ -11,12 +12,27 @@ export function Footer() {
               href="/"
               className="font-heading text-lg font-bold text-foreground"
             >
-              [Company Name]
+              ThoughtsCrest
             </Link>
-            <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-muted-foreground">
-              [Placeholder] Core banking implementation, workflow automation,
-              and data migration across African and Indian markets.
+            <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-muted-foreground">
+              Global technology partner for banks and financial institutions.
+              Core banking, automation, and AI.
             </p>
+            <ul className="mt-4 flex flex-col gap-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
+                <a href="mailto:info@thoughtscrest.com" className="hover:text-accent">
+                  info@thoughtscrest.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
+                <span className="max-w-[24ch]">
+                  2nd Floor, Rahul Arcade, #53, 12th Main Road, Sector 6, HSR
+                  Layout, Bangalore, Karnataka 560102, India
+                </span>
+              </li>
+            </ul>
           </div>
 
           {footerColumns.map((col) => (
@@ -48,7 +64,7 @@ export function Footer() {
             <input
               id="newsletter-email"
               type="email"
-              placeholder="[Placeholder] you@bank.com"
+              placeholder="you@bank.com"
               className="w-full rounded-full border border-border-warm bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
             />
             <button
@@ -59,7 +75,7 @@ export function Footer() {
             </button>
           </form>
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} [Company Name]. All rights reserved.
+            © {new Date().getFullYear()} ThoughtsCrest. All Rights Reserved.
           </p>
         </div>
       </div>

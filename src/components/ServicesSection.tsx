@@ -7,7 +7,6 @@ import { CoreBankingVisual } from "@/components/serviceVisuals/CoreBankingVisual
 import { WorkflowAutomationVisual } from "@/components/serviceVisuals/WorkflowAutomationVisual";
 import { DigitalTransformationVisual } from "@/components/serviceVisuals/DigitalTransformationVisual";
 import { AiDataVisual } from "@/components/serviceVisuals/AiDataVisual";
-import { CloudInfraVisual } from "@/components/serviceVisuals/CloudInfraVisual";
 import { IntegrationApiVisual } from "@/components/serviceVisuals/IntegrationApiVisual";
 
 const services: {
@@ -18,39 +17,33 @@ const services: {
 }[] = [
   {
     label: "Core Banking",
-    blurb: "End-to-end core banking implementation.",
+    blurb: "End-to-end core banking implementation and modernization on Finastra Fusion Essence.",
     href: "/services/core-banking",
     visual: CoreBankingVisual,
   },
   {
     label: "Workflow Automation",
-    blurb: "Automating manual banking operations.",
+    blurb: "Automating the manual, multi-system processes that slow banking operations down.",
     href: "/services/workflow-automation",
     visual: WorkflowAutomationVisual,
   },
   {
-    label: "Digital Transformation",
-    blurb: "Modernizing legacy banking infrastructure.",
-    href: "/services",
+    label: "Data Migration",
+    blurb: "Moving data between core systems with accuracy, confidence, and full audit trails.",
+    href: "/services/data-migration",
+    visual: IntegrationApiVisual,
+  },
+  {
+    label: "Custom Software Development",
+    blurb: "Banking-grade custom software, secure by design and built to your compliance environment.",
+    href: "/services/custom-software",
     visual: DigitalTransformationVisual,
   },
   {
-    label: "AI & Data Solutions",
-    blurb: "Intelligent data and AI solutions for financial operations.",
+    label: "AI & ML",
+    blurb: "Machine-learning and AI for fraud, risk, document intelligence, and agentic workflows.",
     href: "/services/ai-ml",
     visual: AiDataVisual,
-  },
-  {
-    label: "Cloud & Infrastructure",
-    blurb: "Secure, scalable infrastructure for banking workloads.",
-    href: "/services",
-    visual: CloudInfraVisual,
-  },
-  {
-    label: "Integration & APIs",
-    blurb: "Connecting banking systems, fintech platforms and external services.",
-    href: "/services",
-    visual: IntegrationApiVisual,
   },
 ];
 
@@ -63,8 +56,12 @@ export function ServicesSection() {
             Services
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            [Placeholder] Tech that flexes around your teams
+            The full lifecycle, covered
           </h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            From core banking delivery to AI and workflow automation — with
+            accelerators that cut delivery time at every stage.
+          </p>
         </ScrollReveal>
 
         <div className="flex flex-col gap-14 sm:gap-16">

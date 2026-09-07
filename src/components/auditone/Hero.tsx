@@ -15,11 +15,13 @@ export function Hero() {
           Products
         </p>
         <h1 className="mx-auto mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
-          AuditOne — Continuous intelligence for modern banking
+          AuditOne
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-          Transform complex banking operations with real-time visibility,
-          automation and intelligent controls.
+          Purpose-built for auditing banking transactions and static data.
+          AuditOne brings precision and a streamlined workflow to the review
+          of core banking records — so audit teams move faster and catch
+          what matters.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/contact/book-a-consultation">

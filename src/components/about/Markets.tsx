@@ -2,11 +2,19 @@ import { MapPin } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const markets = [
-  "[Placeholder City], Ethiopia",
-  "[Placeholder City], Kenya",
-  "[Placeholder City], Nigeria",
-  "[Placeholder City], India",
-  "[Placeholder City], UAE",
+  "Kenya",
+  "Zimbabwe",
+  "Ethiopia",
+  "Angola",
+  "Libya",
+  "Saudi Arabia",
+  "Mauritania",
+  "Portugal",
+  "Belize",
+  "Thailand",
+  "Philippines",
+  "Indonesia",
+  "Hong Kong",
 ];
 
 export function Markets() {
@@ -17,7 +25,7 @@ export function Markets() {
           Where We Work
         </p>
         <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          [Placeholder] On the ground across our markets
+          Serving banks across 13 countries and 4 continents
         </h2>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {markets.map((market) => (
