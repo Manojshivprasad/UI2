@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { type LucideIcon, SlidersHorizontal, ArrowLeftRight, ToggleLeft } from "lucide-react";
+import { type LucideIcon, ArrowLeftRight, ToggleLeft } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { FlowFrame } from "@/components/flow/FlowFrame";
+import { TransactionFilterMock } from "./TransactionFilterMock";
 
 function ListSnippet({ items, icon: ItemIcon }: { items: string[]; icon: LucideIcon }) {
   return (
@@ -28,14 +29,16 @@ const useCases = [
     key: "transaction",
     label: "Transaction Auditing",
     snippet: (
-      <ListSnippet
-        icon={SlidersHorizontal}
-        items={[
-          "Filter by audit status, account ID, customer ID, or reference",
-          "Select, comment, and audit a transaction in one action",
-          "View linked contra transaction details in a click",
-        ]}
-      />
+      <div className="flex w-full flex-col gap-4">
+        <TransactionFilterMock />
+        <ListSnippet
+          icon={ArrowLeftRight}
+          items={[
+            "Select, comment, and audit a transaction in one action",
+            "View linked contra transaction details in a click",
+          ]}
+        />
+      </div>
     ),
   },
   {

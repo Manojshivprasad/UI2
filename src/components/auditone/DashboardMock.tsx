@@ -52,12 +52,32 @@ const statusStyles: Record<string, string> = {
   Pending: "bg-accent/10 text-accent",
 };
 
+function matchedRowIndexes(rows: string[][], filter: string | null) {
+  if (!filter) return null;
+  if (filter === "Audit Status") {
+    const statuses = rows.map((r) => r[0]);
+    const target = statuses.includes("Audited") ? "Audited" : statuses[0];
+    return new Set(rows.map((r, i) => (r[0] === target ? i : -1)).filter((i) => i !== -1));
+  }
+  // ID-based filters (Account ID, Customer ID, Reference, Category) narrow to one example match.
+  return new Set([0]);
+}
+
 export function DashboardMock({ className }: { className?: string }) {
   const [hovered, setHovered] = useState(false);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
+  const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
+  const [appliedFilter, setAppliedFilter] = useState<string | null>(null);
   const autoIndex = useLoopStep(modules.length - 1, 3200, hovered);
   const activeIndex = manualIndex ?? autoIndex;
   const active = modules[activeIndex];
+  const matched = matchedRowIndexes(active.rows, appliedFilter);
+
+  const switchModule = (i: number) => {
+    setManualIndex(i);
+    setSelectedFilter(null);
+    setAppliedFilter(null);
+  };
 
   return (
     <div
@@ -88,7 +108,7 @@ export function DashboardMock({ className }: { className?: string }) {
               <button
                 key={m.label}
                 type="button"
-                onClick={() => setManualIndex(i)}
+                onClick={() => switchModule(i)}
                 aria-current={i === activeIndex}
                 className={cn(
                   "flex items-center gap-2 rounded-lg px-2.5 py-2.5 text-left text-xs font-semibold leading-tight transition-colors duration-200",
@@ -119,16 +139,40 @@ export function DashboardMock({ className }: { className?: string }) {
         <div className="min-w-0 flex-1 p-6">
           <div className="flex flex-wrap items-center gap-2">
             {active.filters.map((f) => (
-              <span
+              <button
                 key={f}
-                className="rounded-md border border-border-warm bg-background px-2.5 py-1.5 text-[11px] font-medium text-muted-foreground"
+                type="button"
+                onClick={() => setSelectedFilter((s) => (s === f ? null : f))}
+                aria-pressed={selectedFilter === f}
+                className={cn(
+                  "rounded-md border px-2.5 py-1.5 text-[11px] font-medium transition-colors duration-200",
+                  selectedFilter === f
+                    ? "border-accent bg-accent/10 text-accent"
+                    : "border-border-warm bg-background text-muted-foreground hover:border-accent/40"
+                )}
               >
                 {f}
-              </span>
+              </button>
             ))}
-            <span className="rounded-md bg-accent px-3 py-1.5 text-[11px] font-semibold text-on-accent">
+            <button
+              type="button"
+              onClick={() => setAppliedFilter(selectedFilter)}
+              className="rounded-md bg-accent px-3 py-1.5 text-[11px] font-semibold text-on-accent transition-colors duration-200 hover:bg-accent-hover"
+            >
               Filter
-            </span>
+            </button>
+            {appliedFilter && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedFilter(null);
+                  setAppliedFilter(null);
+                }}
+                className="text-[11px] font-medium text-muted-foreground underline-offset-2 hover:underline"
+              >
+                Clear
+              </button>
+            )}
           </div>
 
           <div className="mt-4 overflow-x-auto rounded-lg border border-border-warm">
@@ -149,7 +193,11 @@ export function DashboardMock({ className }: { className?: string }) {
                 {active.rows.map((row, i) => (
                   <tr
                     key={i}
-                    className={i > 0 ? "border-t border-border-warm" : undefined}
+                    className={cn(
+                      i > 0 && "border-t border-border-warm",
+                      matched && !matched.has(i) && "opacity-30",
+                      "transition-opacity duration-300"
+                    )}
                   >
                     {row.map((cell, j) => (
                       <td
