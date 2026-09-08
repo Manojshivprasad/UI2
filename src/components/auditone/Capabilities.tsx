@@ -7,26 +7,27 @@ import { LayeredStackMock } from "./LayeredStackMock";
 
 const capabilities = [
   {
-    title: "See everything in real time",
+    title: "Sync banking data automatically",
     description:
-      "Monitor critical banking operations from a single intelligent workspace.",
+      "See exactly when data last synced, how many records came through, and when the next sync runs — no manual refresh needed.",
     visual: <DashboardMock />,
   },
   {
-    title: "Automate what slows your team down",
+    title: "Filter down to exactly what matters",
     description:
-      "Replace repetitive operational workflows with intelligent automation.",
+      "Multi-criteria filters — audit status, account ID, customer ID, branch, date range, and more — narrow thousands of records to the ones that need review.",
     visual: <AutomationQueueMock />,
   },
   {
-    title: "Turn banking data into decisions",
-    description: "Surface actionable insights from complex operational data.",
+    title: "Audit with a full paper trail",
+    description:
+      "Select a record, add a comment, and audit it — with built-in handling that stops the same record from being audited twice.",
     visual: <InsightChartMock />,
   },
   {
-    title: "Built for enterprise scale",
+    title: "Drill into every field",
     description:
-      "Secure, resilient infrastructure designed for demanding banking environments.",
+      "View Details opens the full record — including any linked contra transaction — for line-by-line review.",
     visual: <LayeredStackMock />,
   },
 ];

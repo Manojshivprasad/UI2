@@ -1,33 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Landmark, Share2, Link2, Server, MonitorSmartphone } from "lucide-react";
+import { type LucideIcon, SlidersHorizontal, ArrowLeftRight, ToggleLeft } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { HorizontalFlow } from "@/components/flow/HorizontalFlow";
-import { VerticalFlow } from "@/components/flow/VerticalFlow";
 import { FlowFrame } from "@/components/flow/FlowFrame";
 
-function MetricSnippet() {
-  return (
-    <div className="grid w-full grid-cols-2 gap-3">
-      <div className="rounded-2xl border border-border-warm bg-background p-4">
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-          Audit Score
-        </p>
-        <p className="mt-1 font-heading text-2xl font-bold text-foreground">98.4</p>
-      </div>
-      <div className="rounded-2xl border border-border-warm bg-background p-4">
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-          Compliance
-        </p>
-        <p className="mt-1 font-heading text-2xl font-bold text-foreground">100%</p>
-      </div>
-    </div>
-  );
-}
-
-function ChecklistSnippet() {
-  const items = ["Reconciliation complete", "Ledger balanced", "Report filed"];
+function ListSnippet({ items, icon: ItemIcon }: { items: string[]; icon: LucideIcon }) {
   return (
     <ul className="flex w-full flex-col gap-2.5">
       {items.map((item) => (
@@ -36,7 +14,7 @@ function ChecklistSnippet() {
           className="flex items-center gap-3 rounded-lg border border-border-warm bg-background px-3.5 py-2.5"
         >
           <span className="flex size-5 items-center justify-center rounded-full bg-accent">
-            <Check className="size-3 text-on-accent" strokeWidth={3} />
+            <ItemIcon className="size-3 text-on-accent" strokeWidth={3} />
           </span>
           <span className="text-sm text-foreground">{item}</span>
         </li>
@@ -45,57 +23,45 @@ function ChecklistSnippet() {
   );
 }
 
-function AlertsSnippet() {
-  const items = [
-    { label: "Unusual login pattern flagged", tone: "warning" as const },
-    { label: "Access review completed", tone: "positive" as const },
-  ];
-  return (
-    <ul className="flex w-full flex-col gap-2.5">
-      {items.map((item) => (
-        <li
-          key={item.label}
-          className="flex items-start gap-2.5 rounded-lg border border-border-warm bg-background px-3.5 py-3"
-        >
-          <span
-            className={cn(
-              "mt-1 size-1.5 shrink-0 rounded-full",
-              item.tone === "positive" ? "bg-emerald-500" : "bg-accent"
-            )}
-          />
-          <span className="text-sm text-foreground">{item.label}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 const useCases = [
-  { key: "banks", label: "Banks", snippet: <MetricSnippet /> },
   {
-    key: "fintechs",
-    label: "Fintechs",
+    key: "transaction",
+    label: "Transaction Auditing",
     snippet: (
-      <HorizontalFlow
-        nodes={[
-          { icon: Landmark, label: "Core Banking" },
-          { icon: Share2, label: "API" },
-          { icon: Link2, label: "Fintech Rails" },
+      <ListSnippet
+        icon={SlidersHorizontal}
+        items={[
+          "Filter by audit status, account ID, customer ID, or reference",
+          "Select, comment, and audit a transaction in one action",
+          "View linked contra transaction details in a click",
         ]}
       />
     ),
   },
-  { key: "financial-ops", label: "Financial Operations", snippet: <ChecklistSnippet /> },
-  { key: "compliance", label: "Compliance Teams", snippet: <AlertsSnippet /> },
   {
-    key: "technology",
-    label: "Technology Teams",
+    key: "customer",
+    label: "Customer Static Data Auditing",
     snippet: (
-      <VerticalFlow
-        nodes={[
-          { icon: MonitorSmartphone, label: "Application" },
-          { icon: Share2, label: "API Layer" },
-          { icon: Server, label: "Platform", filled: true },
+      <ListSnippet
+        icon={ArrowLeftRight}
+        items={[
+          "Track every old value → new value change on customer records",
+          "See who modified and who approved each change",
+          "Full detail view for every audited change",
+        ]}
+      />
+    ),
+  },
+  {
+    key: "account",
+    label: "Account Auditing",
+    snippet: (
+      <ListSnippet
+        icon={ToggleLeft}
+        items={[
+          "Track Active, Dormant, and InActive status changes",
+          "Filter by account ID, category, or branch",
+          "Full audit trail on every account record",
         ]}
       />
     ),

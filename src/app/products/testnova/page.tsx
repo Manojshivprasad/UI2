@@ -1,29 +1,33 @@
-import { GitBranch, Clock3, Share2, ScanSearch, BookCheck, Landmark, Bell } from "lucide-react";
-import { ProductHero } from "@/components/products/ProductHero";
+import { ScanSearch, BookCheck, Landmark, Bell } from "lucide-react";
+import { Hero } from "@/components/testnova/Hero";
+import { ProductValue } from "@/components/testnova/ProductValue";
 import { FeatureCards } from "@/components/products/FeatureCards";
+import { CapabilityRows } from "@/components/products/CapabilityRows";
 import { NumberedSteps } from "@/components/products/NumberedSteps";
 import { ProblemsGrid } from "@/components/products/ProblemsGrid";
 import { ProductFinalCta } from "@/components/products/ProductFinalCta";
-import { TestNovaVisual } from "@/components/productVisuals/TestNovaVisual";
+import { ScenarioRunner } from "@/components/productVisuals/testnova/ScenarioRunner";
+import { TimeAwareScrubber } from "@/components/productVisuals/testnova/TimeAwareScrubber";
+import { OrchestrationGraph } from "@/components/productVisuals/testnova/OrchestrationGraph";
 
 const whatItDoes = [
   {
-    icon: GitBranch,
     title: "Business Process Testing",
-    blurb:
+    description:
       "Validates integrated business processes end-to-end, catching integration failures before production — not isolated scripts.",
+    visual: <ScenarioRunner />,
   },
   {
-    icon: Clock3,
     title: "Time-Aware Verification",
-    blurb:
+    description:
       "Dynamic business-date handling and full EOD-cycle simulation, so interest, penalties, and multi-day workflows are tested as they really behave.",
+    visual: <TimeAwareScrubber />,
   },
   {
-    icon: Share2,
     title: "Cross-System Orchestration",
-    blurb:
+    description:
       "Runs across all connected applications simultaneously, validating dependencies a single-system tool can't see.",
+    visual: <OrchestrationGraph />,
   },
 ];
 
@@ -80,13 +84,11 @@ const problems = [
 export default function TestNovaPage() {
   return (
     <>
-      <ProductHero
-        title="TestNova"
-        subhead="Banking automation that actually works like a bank. TestNova is an end-to-end automation platform built for the integrated complexity of modern banking. It validates entire business processes — not just code — so you deploy with confidence, speed, and full audit-ready evidence."
-        visual={<TestNovaVisual />}
-      />
+      <Hero />
 
-      <FeatureCards
+      <ProductValue />
+
+      <CapabilityRows
         eyebrow="What It Does"
         heading="Testing built for how banks actually run"
         items={whatItDoes}

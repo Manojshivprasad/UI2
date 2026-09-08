@@ -2,10 +2,10 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ApiSnippetMock } from "./ApiSnippetMock";
 
 const differentiators = [
-  { number: "01", title: "API-first architecture" },
-  { number: "02", title: "Real-time processing" },
-  { number: "03", title: "Enterprise-grade security" },
-  { number: "04", title: "Scalable infrastructure" },
+  { number: "01", title: "Role-based access control" },
+  { number: "02", title: "Configurable date validation" },
+  { number: "03", title: "Directory-integrated login (CAS/AD/LDAP)" },
+  { number: "04", title: "Transaction exclusion rules" },
 ];
 
 export function Technical() {

@@ -1,28 +1,30 @@
-import { Share2, Network, RadioTower } from "lucide-react";
-import { ProductHero } from "@/components/products/ProductHero";
-import { FeatureCards } from "@/components/products/FeatureCards";
+import { Hero } from "@/components/finlink/Hero";
+import { ProductValue } from "@/components/finlink/ProductValue";
+import { CapabilityRows } from "@/components/products/CapabilityRows";
 import { ProblemsGrid } from "@/components/products/ProblemsGrid";
 import { ProductFinalCta } from "@/components/products/ProductFinalCta";
-import { FinLinkVisual } from "@/components/productVisuals/FinLinkVisual";
+import { IntegrationHubToggle } from "@/components/productVisuals/finlink/IntegrationHubToggle";
+import { ApiOrchestrationPanel } from "@/components/productVisuals/finlink/ApiOrchestrationPanel";
+import { MessageDeliverySim } from "@/components/productVisuals/finlink/MessageDeliverySim";
 
 const whatItDoes = [
   {
-    icon: Network,
     title: "System Integration",
-    blurb:
+    description:
       "Connect core banking, payments, and third-party services without point-to-point sprawl.",
+    visual: <IntegrationHubToggle />,
   },
   {
-    icon: Share2,
     title: "API Orchestration",
-    blurb:
+    description:
       "Expose and manage banking APIs with versioning, security, and monitoring built in.",
+    visual: <ApiOrchestrationPanel />,
   },
   {
-    icon: RadioTower,
     title: "Reliable Messaging",
-    blurb:
+    description:
       "Guaranteed, auditable message delivery across critical banking flows.",
+    visual: <MessageDeliverySim />,
   },
 ];
 
@@ -38,13 +40,11 @@ const problems = [
 export default function FinLinkPage() {
   return (
     <>
-      <ProductHero
-        title="FinLink"
-        subhead="The integration layer that connects your banking ecosystem. FinLink is an enterprise service bus built for financial institutions — orchestrating data and transactions across core banking, channels, and third-party systems through a single, governed interface."
-        visual={<FinLinkVisual />}
-      />
+      <Hero />
 
-      <FeatureCards
+      <ProductValue />
+
+      <CapabilityRows
         eyebrow="What It Does"
         heading="A single, governed interface"
         items={whatItDoes}

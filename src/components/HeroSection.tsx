@@ -31,7 +31,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="mx-auto flex max-w-7xl flex-col items-center gap-14 px-6 pb-20 pt-14 lg:flex-row lg:items-center lg:gap-10 lg:px-10 lg:pb-28 lg:pt-20">
+    <section className="mx-auto flex max-w-7xl flex-col items-center gap-14 px-6 pb-8 pt-10 lg:flex-row lg:items-center lg:gap-10 lg:px-10 lg:pb-12 lg:pt-14">
       <div className="flex max-w-xl flex-col items-start gap-6 text-left">
         <span className="inline-flex items-center gap-2 rounded-full border border-border-warm bg-surface-alt px-4 py-1.5 text-xs font-semibold text-accent">
           <Sparkles className="size-3.5" aria-hidden="true" />

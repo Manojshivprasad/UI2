@@ -1,43 +1,63 @@
 "use client";
 
 import { useState } from "react";
-import {
-  LayoutGrid,
-  ShieldCheck,
-  ClipboardList,
-  Bell,
-  Settings,
-  Check,
-} from "lucide-react";
+import { ClipboardList, Users, Landmark } from "lucide-react";
 import { useLoopStep } from "@/lib/useLoopStep";
 import { cn } from "@/lib/cn";
 
-const navItems = [
-  { icon: LayoutGrid, label: "Overview" },
-  { icon: ShieldCheck, label: "Compliance" },
-  { icon: ClipboardList, label: "Reports" },
-  { icon: Bell, label: "Alerts" },
-  { icon: Settings, label: "Settings" },
+const modules = [
+  {
+    icon: ClipboardList,
+    label: "Transactions",
+    screen: "Transaction Audit Screen",
+    columns: ["Status", "Transaction ID", "Reference", "Amount", "Made By"],
+    filters: ["Audit Status", "Account ID", "Customer ID", "Reference"],
+    rows: [
+      ["Audited", "TXN-88041", "PENALTYINTADJ", "0.00", "brad"],
+      ["Pending", "TXN-88042", "PENALTYINTADJ", "0.00", "brad"],
+      ["Pending", "TXN-88043", "REVENUEALLOC", "0.00", "brad"],
+      ["Pending", "TXN-88044", "PENALTYINTADJ", "0.00", "brad"],
+    ],
+  },
+  {
+    icon: Users,
+    label: "Customers",
+    screen: "Customer Static-Data Audit Screen",
+    columns: ["Status", "Customer ID", "Old Value", "New Value", "Modified By"],
+    filters: ["Audit Status", "Category", "Customer ID"],
+    rows: [
+      ["Pending", "PTY0001", "TestPOLL", "TestPOLL_TEST", "brad"],
+      ["Pending", "PTY0001", "TestGUH", "TestPOL", "malini"],
+      ["Pending", "PTY0001", "Tesmot", "TestPOLL", "prasanth"],
+      ["Pending", "PTY0001", "TestPOL", "TestGUH", "malini"],
+    ],
+  },
+  {
+    icon: Landmark,
+    label: "Accounts",
+    screen: "Account Audit Screen",
+    columns: ["Status", "Account ID", "Old Value", "New Value", "Modified By"],
+    filters: ["Audit Status", "Category", "Account ID"],
+    rows: [
+      ["Pending", "010202PTY000105", "Active", "InActive", "prasanth"],
+      ["Pending", "010202PTY000106", "Dormant", "InActive", "prasanth"],
+      ["Pending", "020201PTY001004", "Dormant", "Active", "malini"],
+      ["Pending", "010202PTY000107", "InActive", "Active", "prasanth"],
+    ],
+  },
 ];
 
-const checks = [
-  "KYC records reconciled",
-  "Transaction logs verified",
-  "Access control audit",
-  "Regulatory report generated",
-];
-
-const alerts = [
-  { label: "Unusual login pattern flagged", tone: "warning" as const },
-  { label: "Quarterly report submitted", tone: "positive" as const },
-  { label: "Access review completed", tone: "positive" as const },
-];
+const statusStyles: Record<string, string> = {
+  Audited: "bg-emerald-100 text-emerald-700",
+  Pending: "bg-accent/10 text-accent",
+};
 
 export function DashboardMock({ className }: { className?: string }) {
   const [hovered, setHovered] = useState(false);
-  const [activeNav, setActiveNav] = useState(0);
-  const step = useLoopStep(checks.length, 900, hovered);
-  const done = step >= checks.length;
+  const [manualIndex, setManualIndex] = useState<number | null>(null);
+  const autoIndex = useLoopStep(modules.length - 1, 3200, hovered);
+  const activeIndex = manualIndex ?? autoIndex;
+  const active = modules[activeIndex];
 
   return (
     <div
@@ -48,134 +68,112 @@ export function DashboardMock({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="flex items-center gap-1.5 border-b border-border-warm bg-surface-alt/70 px-5 py-3">
+      <div className="flex items-center gap-1.5 border-b border-border-warm bg-surface-alt/70 px-6 py-4">
         <span className="size-2.5 rounded-full bg-border-warm" />
         <span className="size-2.5 rounded-full bg-border-warm" />
         <span className="size-2.5 rounded-full bg-border-warm" />
-        <span className="ml-3 text-xs font-medium text-muted-foreground">
-          {navItems[activeNav].label}
+        <span className="ml-3 truncate text-sm font-medium text-muted-foreground">
+          {active.screen}
         </span>
-        <span className="ml-auto flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">
+        <span className="ml-auto flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-semibold text-emerald-700">
           <span className="size-1.5 animate-pulse rounded-full bg-emerald-600" />
           Live
         </span>
       </div>
 
       <div className="flex">
-        <div className="flex w-12 flex-col items-center gap-4 border-r border-border-warm bg-surface-alt/40 py-5">
-          {navItems.map((item, i) => (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => setActiveNav(i)}
-              aria-pressed={activeNav === i}
-              aria-label={item.label}
-              className={cn(
-                "flex size-8 items-center justify-center rounded-lg transition-colors duration-200",
-                activeNav === i
-                  ? "bg-accent text-on-accent"
-                  : "text-muted-foreground/50 hover:bg-accent/10 hover:text-accent"
-              )}
-            >
-              <item.icon className="size-4" aria-hidden="true" />
-            </button>
-          ))}
+        <div className="flex w-[9.5rem] shrink-0 flex-col justify-between border-r border-border-warm bg-surface-alt/40 py-6">
+          <nav className="flex flex-col gap-1.5 px-2.5">
+            {modules.map((m, i) => (
+              <button
+                key={m.label}
+                type="button"
+                onClick={() => setManualIndex(i)}
+                aria-current={i === activeIndex}
+                className={cn(
+                  "flex items-center gap-2 rounded-lg px-2.5 py-2.5 text-left text-xs font-semibold leading-tight transition-colors duration-200",
+                  i === activeIndex
+                    ? "bg-accent text-on-accent"
+                    : "text-muted-foreground/70 hover:bg-accent/10 hover:text-accent"
+                )}
+              >
+                <m.icon className="size-4 shrink-0" aria-hidden="true" />
+                <span className="truncate">{m.label}</span>
+              </button>
+            ))}
+          </nav>
+
+          <div className="mt-6 flex flex-col gap-1.5 border-t border-border-warm px-4 pt-4 text-[11px] leading-snug text-muted-foreground/80">
+            <span>
+              <span className="font-semibold text-foreground">Last:</span> Today 06:07 PM
+            </span>
+            <span>
+              <span className="font-semibold text-foreground">Records:</span> 5,432
+            </span>
+            <span>
+              <span className="font-semibold text-foreground">Next:</span> Today 06:07 PM
+            </span>
+          </div>
         </div>
 
-        <div className="flex-1 p-5">
-          <div className="grid grid-cols-3 gap-3">
-            <div className="rounded-2xl border border-border-warm bg-background p-3.5">
-              <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                Audit Score
-              </p>
-              <p className="mt-1 font-heading text-2xl font-bold text-foreground">
-                98.4
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border-warm bg-background p-3.5">
-              <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                Compliance
-              </p>
-              <p className="mt-1 font-heading text-2xl font-bold text-foreground">
-                100%
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border-warm bg-background p-3.5">
-              <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                Open Findings
-              </p>
-              <p className="mt-1 font-heading text-2xl font-bold text-foreground">
-                {done ? "0" : "2"}
-              </p>
-            </div>
+        <div className="min-w-0 flex-1 p-6">
+          <div className="flex flex-wrap items-center gap-2">
+            {active.filters.map((f) => (
+              <span
+                key={f}
+                className="rounded-md border border-border-warm bg-background px-2.5 py-1.5 text-[11px] font-medium text-muted-foreground"
+              >
+                {f}
+              </span>
+            ))}
+            <span className="rounded-md bg-accent px-3 py-1.5 text-[11px] font-semibold text-on-accent">
+              Filter
+            </span>
           </div>
 
-          <div className="mt-4 grid grid-cols-5 gap-4">
-            <div className="col-span-3 rounded-2xl border border-border-warm bg-background p-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-muted-foreground">
-                  Q3 Compliance Sweep
-                </span>
-                <span
-                  className={cn(
-                    "rounded-full px-2 py-0.5 text-[10px] font-semibold",
-                    done ? "bg-emerald-100 text-emerald-700" : "bg-accent/10 text-accent"
-                  )}
-                >
-                  {done ? "Passed" : "Scanning…"}
-                </span>
-              </div>
-              <ul className="mt-3 flex flex-col gap-2">
-                {checks.map((label, i) => {
-                  const checked = step > i;
-                  return (
-                    <li key={label} className="flex items-center gap-2.5">
-                      <span
-                        className={cn(
-                          "flex size-4 shrink-0 items-center justify-center rounded-full border transition-colors duration-300",
-                          checked
-                            ? "border-accent bg-accent"
-                            : "border-border-warm bg-transparent"
-                        )}
+          <div className="mt-4 overflow-x-auto rounded-lg border border-border-warm">
+            <table className="w-full min-w-[420px] border-collapse text-left">
+              <thead>
+                <tr className="bg-surface-alt/60">
+                  {active.columns.map((col) => (
+                    <th
+                      key={col}
+                      className="whitespace-nowrap px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground"
+                    >
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {active.rows.map((row, i) => (
+                  <tr
+                    key={i}
+                    className={i > 0 ? "border-t border-border-warm" : undefined}
+                  >
+                    {row.map((cell, j) => (
+                      <td
+                        key={j}
+                        className="whitespace-nowrap px-3 py-2.5 text-[11px] text-foreground"
                       >
-                        {checked && (
-                          <Check className="size-2.5 text-white" strokeWidth={3} />
+                        {j === 0 ? (
+                          <span
+                            className={cn(
+                              "rounded-full px-2 py-0.5 text-[10px] font-semibold",
+                              statusStyles[cell]
+                            )}
+                          >
+                            {cell}
+                          </span>
+                        ) : (
+                          cell
                         )}
-                      </span>
-                      <span
-                        className={cn(
-                          "text-[11px] transition-colors duration-300",
-                          checked ? "text-foreground" : "text-muted-foreground/70"
-                        )}
-                      >
-                        {label}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <div className="col-span-2 rounded-2xl border border-border-warm bg-background p-4">
-              <span className="text-xs font-semibold text-muted-foreground">
-                Recent Alerts
-              </span>
-              <ul className="mt-3 flex flex-col gap-2.5">
-                {alerts.map((alert) => (
-                  <li key={alert.label} className="flex items-start gap-2">
-                    <span
-                      className={cn(
-                        "mt-1 size-1.5 shrink-0 rounded-full",
-                        alert.tone === "positive" ? "bg-emerald-500" : "bg-accent"
-                      )}
-                    />
-                    <span className="text-[11px] leading-snug text-foreground">
-                      {alert.label}
-                    </span>
-                  </li>
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </ul>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

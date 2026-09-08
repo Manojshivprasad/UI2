@@ -7,10 +7,10 @@ export function UseCases() {
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
         <ScrollReveal className="mx-auto mb-16 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Use Cases
+            Audit Modules
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            Built for the teams moving banking forward
+            Three modules, one workspace
           </h2>
         </ScrollReveal>
 
