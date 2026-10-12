@@ -9,12 +9,14 @@ export type CapabilityRowItem = {
 };
 
 export function CapabilityRows({
+  id,
   eyebrow,
   heading,
   intro,
   items,
   tone = "default",
 }: {
+  id?: string;
   eyebrow: string;
   heading: string;
   intro?: string;
@@ -22,7 +24,7 @@ export function CapabilityRows({
   tone?: "default" | "alt";
 }) {
   return (
-    <section className={cn("py-24 sm:py-32", tone === "alt" && "bg-surface-alt")}>
+    <section id={id} className={cn("py-24 sm:py-32", tone === "alt" && "bg-surface-alt")}>
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <ScrollReveal className="mx-auto mb-20 max-w-2xl text-center sm:mb-28">
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">

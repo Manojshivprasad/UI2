@@ -10,10 +10,10 @@ export function Logo({
 }) {
   return (
     <Image
-      src="/thoughtscrest-logo.png"
+      src="/thoughtscrest-wordmark.png"
       alt="ThoughtsCrest"
-      width={1200}
-      height={187}
+      width={419}
+      height={66}
       priority={priority}
       className={cn("h-8 w-auto", className)}
     />
