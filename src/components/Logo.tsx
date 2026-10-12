@@ -10,11 +10,12 @@ export function Logo({
 }) {
   return (
     <Image
-      src="/thoughtscrest-wordmark.png"
+      src="/thoughtscrest-logo.svg"
       alt="ThoughtsCrest"
-      width={419}
-      height={66}
+      width={272}
+      height={50}
       priority={priority}
+      unoptimized
       className={cn("h-8 w-auto", className)}
     />
   );

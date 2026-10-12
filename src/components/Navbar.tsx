@@ -46,7 +46,7 @@ export function Navbar() {
           aria-label="ThoughtsCrest home"
           className="flex shrink-0 items-center"
         >
-          <Logo priority className="h-8 sm:h-9" />
+          <Logo priority className="h-9 sm:h-10" />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
