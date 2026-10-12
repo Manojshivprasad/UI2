@@ -42,7 +42,7 @@ export function HeroSection() {
           ref={headlineRef}
           className="font-heading text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl"
         >
-          Banking technology that works the way banks actually work.
+          We build the systems institutions run on.
         </h1>
 
         <p className="max-w-md text-base leading-relaxed text-muted-foreground">

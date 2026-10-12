@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { footerColumns } from "@/lib/siteConfig";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -8,11 +9,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
-            <Link
-              href="/"
-              className="font-heading text-lg font-bold text-foreground"
-            >
-              ThoughtsCrest
+            <Link href="/" aria-label="ThoughtsCrest home" className="inline-block">
+              <Logo className="h-9" />
             </Link>
             <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-muted-foreground">
               Global technology partner for banks and financial institutions.

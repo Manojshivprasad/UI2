@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const stats = [
   { value: 30, suffix: "+", label: "Core Banking Implementations" },
   { value: 15, suffix: "+", label: "Data Migrations" },
-  { value: 80, suffix: "+", label: "Consultants" },
+  { value: 120, suffix: "+", label: "Consultants" },
   { value: 10, suffix: "+", label: "Business Process Automations" },
 ];
 

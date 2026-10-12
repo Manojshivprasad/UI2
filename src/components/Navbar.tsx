@@ -6,6 +6,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { primaryNav } from "@/lib/siteConfig";
 import { Icon } from "@/components/Icon";
 import { Button } from "@/components/Button";
+import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/cn";
 
 export function Navbar() {
@@ -42,9 +43,10 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link
           href="/"
-          className="font-heading text-lg font-bold tracking-tight text-foreground"
+          aria-label="ThoughtsCrest home"
+          className="flex shrink-0 items-center"
         >
-          ThoughtsCrest
+          <Logo priority className="h-8 sm:h-9" />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
